@@ -1,68 +1,135 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>2025 충남과학고등학교 학생회장 선거</title>
-  <style>
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #f9f9f9;
-      height: 100vh;
-    }
+    <title>2025 전교회장선거</title>
+    <meta charset="utf-8">
+    <!-- Pretendard & BR Cobane -->
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/br-cobane" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
-    h1 {
-      margin-bottom: 20px;
-      font-size: 2.5rem;
-      text-align: center;
-    }
+        h1 {
+            font-family: 'BR Cobane', sans-serif;
+            font-size: 70px;
+            letter-spacing: 4px;
+            margin-bottom: 60px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.6);
+        }
 
-    .candidates {
-      display: flex;
-      gap: 20px;
-    }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
 
-    .candidate {
-      width: 160px;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border: 4px solid;
-      border-radius: 15px;
-      background-clip: padding-box;
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-      text-decoration: none;
-      color: black;
-    }
+        .card {
+            position: relative;
+            background-color: rgba(20,20,20,0.9);
+            border-radius: 20px;
+            width: 220px;
+            height: 180px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-family: 'Pretendard', sans-serif;
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .candidate:hover {
-      transform: scale(1.1);
-    }
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
 
-    .red { border-color: red; background-color: #ffe5e5; }
-    .blue { border-color: blue; background-color: #e5f0ff; }
-    .yellow { border-color: gold; background-color: #fff9d6; }
-    .green { border-color: green; background-color: #e5ffe5; }
-    .orange { border-color: orange; background-color: #fff0e0; }
-  </style>
+        .number {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 50px;
+            font-weight: 900;
+            font-family: 'BR Cobane', sans-serif;
+            opacity: 0.8;
+        }
+
+        .names {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .names p {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 5px 0;
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .card:hover .names p {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+        }
+
+        /* 색상별 스타일 */
+        .blue { border: 2px solid rgb(0,132,255); box-shadow: 0 0 20px rgba(0,132,255,0.5); color: rgb(0,132,255); }
+        .blue:hover { box-shadow: 0 0 30px rgba(0,132,255,0.8); }
+        .red { border: 2px solid rgb(255,50,50); box-shadow: 0 0 20px rgba(255,50,50,0.5); color: rgb(255,50,50); }
+        .red:hover { box-shadow: 0 0 30px rgba(255,50,50,0.8); }
+        .yellow { border: 2px solid rgb(255,215,0); box-shadow: 0 0 20px rgba(255,215,0,0.5); color: rgb(255,215,0); }
+        .yellow:hover { box-shadow: 0 0 30px rgba(255,215,0,0.8); }
+        .green { border: 2px solid rgb(0,255,128); box-shadow: 0 0 20px rgba(0,255,128,0.5); color: rgb(0,255,128); }
+        .green:hover { box-shadow: 0 0 30px rgba(0,255,128,0.8); }
+        .orange { border: 2px solid rgb(255,140,0); box-shadow: 0 0 20px rgba(255,140,0,0.5); color: rgb(255,140,0); }
+        .orange:hover { box-shadow: 0 0 30px rgba(255,140,0,0.8); }
+    </style>
 </head>
 <body>
-  <h1>2025 충남과학고등학교 학생회장 선거</h1>
-  <div class="candidates">
-    <a href="no1.html" class="candidate red">기호 1</a>
-    <a href="no2.html" class="candidate blue">기호 2</a>
-    <a href="no3.html" class="candidate yellow">기호 3</a>
-    <a href="no4.html" class="candidate green">기호 4</a>
-    <a href="no5.html" class="candidate orange">기호 5</a>
-  </div>
+    <h1>2025 전교회장선거</h1>
+    <div class="container">
+        <a href="no1.html" class="card blue">
+            <div class="number">1</div>
+            <div class="names">
+                <p>이재원</p>
+                <p>이재형</p>
+            </div>
+        </a>
+        <a href="no2.html" class="card red">
+            <div class="number">2</div>
+            <div class="names">
+                <p>유현규</p>
+                <p>김지후</p>
+            </div>
+        </a>
+        <a href="no3.html" class="card yellow">
+            <div class="number">3</div>
+            <div class="names">
+                <p>김시은</p>
+                <p>박주언</p>
+            </div>
+        </a>
+        <a href="no4.html" class="card green">
+            <div class="number">4</div>
+            <div class="names">
+                <p>이주호</p>
+                <p>김도윤</p>
+            </div>
+        </a>
+        <a href="no5.html" class="card orange">
+            <div class="number">5</div>
+            <div class="names">
+                <p>장윤호</p>
+                <p>임영석</p>
+            </div>
+        </a>
+    </div>
 </body>
 </html>
