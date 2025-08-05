@@ -12,7 +12,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #060606; /*f9f9f9*/
+      background-color: #f9f9f9;
       height: 100vh;
     }
 
@@ -40,6 +40,8 @@
       background-clip: padding-box;
       cursor: pointer;
       transition: transform 0.2s ease-in-out;
+      text-decoration: none;
+      color: black;
     }
 
     .candidate:hover {
@@ -47,7 +49,7 @@
     }
 
     .red { border-color: red; background-color: #ffe5e5; }
-    .blue { border-color: blue; background-color: #007AFF; }
+    .blue { border-color: blue; background-color: #e5f0ff; }
     .yellow { border-color: gold; background-color: #fff9d6; }
     .green { border-color: green; background-color: #e5ffe5; }
     .orange { border-color: orange; background-color: #fff0e0; }
@@ -56,11 +58,11 @@
 <body>
   <h1>2025 충남과학고등학교 학생회장 선거</h1>
   <div class="candidates">
-    <div class="candidate blue">기호 1</div>
-    <div class="candidate red">기호 2</div>
-    <div class="candidate yellow">기호 3</div>
-    <div class="candidate green">기호 4</div>
-    <div class="candidate orange">기호 5</div>
+    <a href="no1.html" class="candidate red">기호 1</a>
+    <a href="no2.html" class="candidate blue">기호 2</a>
+    <a href="no3.html" class="candidate yellow">기호 3</a>
+    <a href="no4.html" class="candidate green">기호 4</a>
+    <a href="no5.html" class="candidate orange">기호 5</a>
   </div>
 </body>
 </html>
