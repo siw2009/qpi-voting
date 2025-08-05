@@ -2,108 +2,112 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>기호 1번 홍길동 - 후보 소개</title>
+  <title>1번 후보 - 회장·부회장 소개</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
-      --primary: #007aff; /* 후보 대표색 */
+      --primary: #007aff;
       --bg: #f9f9f9;
       --card-bg: #ffffff;
       --text: #222;
       --shadow: 0 4px 10px rgba(0,0,0,.08);
     }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:'Noto Sans KR',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    a{text-decoration:none;color:var(--primary);}
-    .container{
-      width:90%;
-      max-width:900px;
-      margin:0 auto;
-      padding:1.5rem 0 4rem;
+    a { text-decoration: none; color: var(--primary); }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
     }
-    /* Hero */
-    .hero{
-      text-align:center;
-      padding:2.5rem 1rem 3rem;
+    /* 듀오(회장·부회장) 레이아웃 */
+    .ticket { margin-top: 1.5rem; }
+    .member {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
-    .hero .avatar{
-      width:160px;height:160px;
-      border-radius:50%;
-      object-fit:cover;
-      box-shadow:var(--shadow);
-      margin-bottom:1rem;
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: var(--shadow);
     }
-    .hero h1{
-      font-size:2rem;
-      margin-bottom:.3rem;
-      color:var(--primary);
+    .info h2 {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+      color: var(--primary);
     }
-    .hero .slogan{
-      font-size:1.2rem;
-      font-weight:500;
-      opacity:.8;
+    .info ul {
+      list-style: none;
+      display: grid;
+      gap: .4rem;
+      font-size: 1rem;
     }
-    /* About */
-    .about{margin-top:3rem;}
-    .about h2{font-size:1.5rem;margin-bottom:1rem;}
-    .about ul{
-      list-style:none;
-      display:grid;
-      gap:.75rem;
-    }
-    .about li{
-      background:var(--card-bg);
-      padding:.75rem 1rem;
-      border-radius:10px;
-      box-shadow:var(--shadow);
-      display:flex;
-      align-items:center;
-      gap:.6rem;
-      font-size:1rem;
-    }
-    .about li .icon{font-size:1.25rem;}
+    .info ul li { display: flex; align-items: center; gap: .5rem; }
+    .info ul li .icon { font-size: 1.1rem; }
+
     /* Manifesto */
-    .manifesto{margin-top:3rem;}
-    .manifesto h2{font-size:1.5rem;margin-bottom:1rem;}
-    .pledges{display:grid;gap:1rem;}
-    .pledge{
-      background:var(--card-bg);
-      padding:1rem 1.25rem;
-      border-radius:12px;
-      box-shadow:var(--shadow);
+    .manifesto { margin-top: 3rem; }
+    .manifesto h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .pledges { display: grid; gap: 1rem; }
+    .pledge {
+      background: var(--card-bg);
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
     }
-    .pledge h3{font-size:1.1rem;margin-bottom:.4rem;color:var(--primary);} 
-    @media(min-width:600px){
-      .about ul{grid-template-columns:repeat(2,1fr);} 
-      .pledges{grid-template-columns:repeat(2,1fr);} 
+    .pledge h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--primary); }
+    @media (min-width: 600px) {
+      .pledges { grid-template-columns: repeat(2, 1fr); }
     }
-    /* Bottom nav */
-    .bottom-nav{margin-top:4rem;text-align:center;}
+
+    .bottom-nav { margin-top: 4rem; text-align: center; }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <img src="images/candidate1.jpg" alt="기호 1번 홍길동" class="avatar">
-      <h1>기호 1번 홍길동</h1>
-      <p class="slogan">“과학고의 내일, 함께 만드는 오늘!”</p>
-    </section>
+    <h1 style="text-align:center;font-size:2rem;color:var(--primary);margin-bottom:1rem;">기호 1번 홍길동 &amp; 김영희</h1>
+    <p style="text-align:center;font-size:1.2rem;opacity:.8;">“과학고의 내일, 함께 만드는 오늘!”</p>
 
-    <!-- About Me -->
-    <section class="about">
-      <h2>About Me</h2>
-      <ul>
-        <li><span class="icon">🏫</span>2학년 3반</li>
-        <li><span class="icon">📚</span>과학동아리 S.O.S 회장</li>
-        <li><span class="icon">🏆</span>전국 과학탐구대회 은상 (2024)</li>
-        <li><span class="icon">🗳️</span>학생회 정책기획부 부원 (2023)</li>
-      </ul>
+    <!-- 후보 듀오 -->
+    <section class="ticket">
+      <!-- 회장 -->
+      <div class="member">
+        <img src="images/president.jpg" alt="회장 홍길동" class="avatar">
+        <div class="info">
+          <h2>회장 홍길동</h2>
+          <ul>
+            <li><span class="icon">🏫</span>2학년 3반</li>
+            <li><span class="icon">📚</span>과학동아리 S.O.S 회장</li>
+            <li><span class="icon">🏆</span>전국 과학탐구대회 은상 (2024)</li>
+            <li><span class="icon">🗳️</span>학생회 정책기획부 (2023)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 부회장 -->
+      <div class="member">
+        <img src="images/vice.jpg" alt="부회장 김영희" class="avatar">
+        <div class="info">
+          <h2>부회장 김영희</h2>
+          <ul>
+            <li><span class="icon">🏫</span>2학년 1반</li>
+            <li><span class="icon">🔬</span>생명과학 연구회 BioLab 부회장</li>
+            <li><span class="icon">🥇</span>전국 생명과학경시대회 금상 (2024)</li>
+            <li><span class="icon">🤝</span>학생 멘토링 프로그램 총괄 (2023)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Manifesto -->
@@ -125,7 +129,6 @@
       </div>
     </section>
 
-    <!-- Bottom navigation -->
     <nav class="bottom-nav">
       <a href="index.html">← 후보 목록으로</a>
     </nav>
