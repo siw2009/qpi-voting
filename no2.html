@@ -1,137 +1,129 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>1번 후보 - 회장·부회장 소개</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --primary: #007aff;
-      --bg: #f9f9f9;
-      --card-bg: #ffffff;
-      --text: #222;
-      --shadow: 0 4px 10px rgba(0,0,0,.08);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: var(--primary); }
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem 0 4rem;
-    }
-    /* 듀오(회장·부회장) 레이아웃 */
-    .ticket { margin-top: 1.5rem; }
-    .member {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: var(--shadow);
-    }
-    .info h2 {
-      font-size: 1.5rem;
-      margin-bottom: .5rem;
-      color: var(--primary);
-    }
-    .info ul {
-      list-style: none;
-      display: grid;
-      gap: .4rem;
-      font-size: 1rem;
-    }
-    .info ul li { display: flex; align-items: center; gap: .5rem; }
-    .info ul li .icon { font-size: 1.1rem; }
+    <title>2025 충남과학고등학교 학생회장선거</title>
+    <meta charset="utf-8">
+    <!-- Pretendard & BR Cobane -->
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/br-cobane" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
 
-    /* Manifesto */
-    .manifesto { margin-top: 3rem; }
-    .manifesto h2 { font-size: 1.6rem; margin-bottom: 1rem; }
-    .pledges { display: grid; gap: 1rem; }
-    .pledge {
-      background: var(--card-bg);
-      padding: 1rem 1.25rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-    .pledge h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--primary); }
-    @media (min-width: 600px) {
-      .pledges { grid-template-columns: repeat(2, 1fr); }
-    }
+        h1 {
+            font-family: 'BR Cobane', sans-serif;
+            font-size: 70px;
+            letter-spacing: 4px;
+            margin: 40px 0 10px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.6);
+            text-align: center;
+        }
 
-    .bottom-nav { margin-top: 4rem; text-align: center; }
-  </style>
+        .subtitle {
+            font-family: 'Pretendard', sans-serif;
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            position: relative;
+            background-color: rgba(20,20,20,0.9);
+            border-radius: 20px;
+            width: 220px;
+            height: 270px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-family: 'Pretendard', sans-serif;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .number {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 150px;
+            font-weight: 900;
+            font-family: 'BR Cobane', sans-serif;
+            opacity: 0.8;
+            transition: text-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .card:hover .number {
+            text-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+
+        .names {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .names p {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 5px 0;
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .card:hover .names p {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+        }
+
+        /* 색상별 스타일 */
+        .blue { border: 2px solid rgb(0,122,255); box-shadow: 0 0 20px rgba(0,122,255,0.5); color: rgb(0,122,255); }
+        .blue:hover { box-shadow: 0 0 30px rgba(0,122,255,0.8); }
+        .red { border: 2px solid rgb(255,50,50); box-shadow: 0 0 20px rgba(255,50,50,0.5); color: rgb(255,50,50); }
+        .red:hover { box-shadow: 0 0 30px rgba(255,50,50,0.8); }
+        .yellow { border: 2px solid rgb(255,215,0); box-shadow: 0 0 20px rgba(255,215,0,0.5); color: rgb(255,215,0); }
+        .yellow:hover { box-shadow: 0 0 30px rgba(255,215,0,0.8); }
+        .green { border: 2px solid rgb(0,255,128); box-shadow: 0 0 20px rgba(0,255,128,0.5); color: rgb(0,255,128); }
+        .green:hover { box-shadow: 0 0 30px rgba(0,255,128,0.8); }
+        .orange { border: 2px solid rgb(255,140,0); box-shadow: 0 0 20px rgba(255,140,0,0.5); color: rgb(255,140,0); }
+        .orange:hover { box-shadow: 0 0 30px rgba(255,140,0,0.8); }
+
+        .footer {
+            font-family: 'Pretendard', sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            padding: 15px 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1 style="text-align:center;font-size:2rem;color:var(--primary);margin-bottom:1rem;">기호 1번 홍길동 &amp; 김영희</h1>
-    <p style="text-align:center;font-size:1.2rem;opacity:.8;">“과학고의 내일, 함께 만드는 오늘!”</p>
-
-    <!-- 후보 듀오 -->
-    <section class="ticket">
-      <!-- 회장 -->
-      <div class="member">
-        <img src="img/gildong.image.jpeg" alt="회장 홍길동" class="avatar">
-        <div class="info">
-          <h2>회장 홍길동</h2>
-          <ul>
-            <li><span class="icon">🏫</span>2학년 3반</li>
-            <li><span class="icon">📚</span>과학동아리 S.O.S 회장</li>
-            <li><span class="icon">🏆</span>전국 과학탐구대회 은상 (2024)</li>
-            <li><span class="icon">🗳️</span>학생회 정책기획부 (2023)</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 부회장 -->
-      <div class="member">
-        <img src="img/gildong.image.jpeg" alt="부회장 김영희" class="avatar">
-        <div class="info">
-          <h2>부회장 김영희</h2>
-          <ul>
-            <li><span class="icon">🏫</span>2학년 1반</li>
-            <li><span class="icon">🔬</span>생명과학 연구회 BioLab 부회장</li>
-            <li><span class="icon">🥇</span>전국 생명과학경시대회 금상 (2024)</li>
-            <li><span class="icon">🤝</span>학생 멘토링 프로그램 총괄 (2023)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Manifesto -->
-    <section class="manifesto">
-      <h2>핵심 공약</h2>
-      <div class="pledges">
-        <div class="pledge">
-          <h3>1. 자습실 예약제 도입</h3>
-          <p>앱으로 빈 좌석을 실시간 확인하고 편리하게 예약할 수 있도록 하겠습니다.</p>
-        </div>
-        <div class="pledge">
-          <h3>2. 야간 간식 확대</h3>
-          <p>주 3회→주 5회, 메뉴 다양화로 든든한 공부 환경을 만들겠습니다.</p>
-        </div>
-        <div class="pledge">
-          <h3>3. 정전기 실험실 리모델링</h3>
-          <p>노후 장비 교체·안전장치 보강으로 실험 효율 150% UP!</p>
-        </div>
-      </div>
-    </section>
-
-    <nav class="bottom-nav">
-      <a href="index.html">← 후보 목록으로</a>
-    </nav>
-  </div>
-</body>
-</html>
+    <h1>2025 충남과학고등학교 학생회장선거</h1>
+    <p class
