@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>2번 후보 - 회장·부회장 소개</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"> -->
+<style>
     :root {
       --primary: #007aff;
-      --bg: #f9f9f9;
+      /* --bg: #f9f9f9; */
+      --bg: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
       --card-bg: #ffffff;
       --text: #222;
       --shadow: 0 4px 10px rgba(0,0,0,.08);
@@ -61,14 +63,15 @@
       flex-wrap: wrap;
     }
     .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 175px;
+      height: 225px;
+      border-radius: 8%;
+      object-fit: inherit;
       box-shadow: var(--shadow);
     }
     .info h2 {
       font-size: 1.5rem;
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
       margin-bottom: .5rem;
       color: var(--primary);
     }
@@ -77,6 +80,7 @@
       display: grid;
       gap: .4rem;
       font-size: 1rem;
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
     }
     .info ul li { display: flex; align-items: center; gap: .5rem; }
     .info ul li .icon { font-size: 1.1rem; }
@@ -103,7 +107,7 @@
   <!-- ================= Hero Banner ================= -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>기호 1번 유현규&amp; 김지후</h1>
+      <h1>기호 2번 유현규&amp; 김지후</h1>
       <p>“내용”</p>
     </div>
   </section>
@@ -113,7 +117,7 @@
     <section class="ticket">
       <!-- 회장 -->
       <div class="member">
-        <img src="img/gildong.image.jpeg" alt="회장" class="avatar">
+        <img src="img/no1/회장.jpg" alt="회장" class="avatar">
         <div class="info">
           <h2>회장 유현규</h2>
           <ul>
@@ -127,9 +131,9 @@
 
       <!-- 부회장 -->
       <div class="member">
-        <img src="img/gildong.image.jpeg" alt="부회장" class="avatar">
+        <img src="img/no1/부회장.jpg" alt="부회장" class="avatar">
         <div class="info">
-          <h2>부회장 김지후</h2>
+          <h2>부회장 김지훈</h2>
           <ul>
             <li><span class="icon">🏫</span>...</li>
             <li><span class="icon">🔬</span>...</li>
