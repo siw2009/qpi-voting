@@ -2,15 +2,16 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>5번 후보 - 회장·부회장 소개</title>
+  <title>1번 후보 - 회장·부회장 소개</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
       --primary: #007aff;
       --bg: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+      --card-bg: #ffffff;
       --bright-text: #f9f9f9;
-      --text: #f9f9f9;
-      --candidate: rgb(255,140,0);
+      --text: #222;
+      --candidate: rgb(0, 122, 255);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -19,7 +20,6 @@
       color: var(--text);
       line-height: 1.6;
     }
-    a { text-decoration: none; color: var(--primary); }
 
     /* Hero Banner */
     .hero {
@@ -43,35 +43,24 @@
       opacity: .9;
     }
 
-    /* Layout */
+    /* Layout: 후보자 + 영상 */
     .container {
       width: 90%;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 1.5rem 0 4rem;
-    }
-
-    /* 사진 + 영상 섹션 */
-    .media-section {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    /* 후보자 사진 (왼쪽, 두 줄) */
-    .photo-grid {
+      padding: 2rem 0 4rem;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      align-items: start;
     }
+
+    /* 회장·부회장 사진 */
+    .ticket { display: flex; flex-direction: column; gap: 2rem; }
     .member {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
+      gap: 1.2rem;
       position: relative;
     }
     .avatar {
@@ -92,27 +81,41 @@
     }
     .info h2 {
       font-size: 1.5rem;
-      margin: 1rem 0 .5rem;
       color: var(--candidate);
       text-shadow: 0 0 10px currentColor;
     }
-
-    /* 유튜브 영상 (오른쪽, 두 개 나란히) */
-    .video-grid {
+    .info ul {
+      color: var(--bright-text);
+      list-style: none;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .video-grid iframe {
-      width: 300px;
-      height: 170px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255,140,0,0.6);
+      gap: .4rem;
+      font-size: 1rem;
+      text-shadow: 0 0 20px currentColor;
     }
 
-    /* 공약 카드 */
-    .manifesto { margin-top: 3rem; }
+    /* 영상 부분 */
+    .videobg {
+      width: 100%;
+      height: 100%;
+    }
+    .videobox {
+      width: 100%;
+      aspect-ratio: 16/9;
+      box-shadow: 0 0 30px var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .videobox iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Manifesto */
+    .manifesto {
+      margin-top: 3rem;
+      grid-column: 1 / 3;
+    }
     .manifesto h2 {
       color: var(--bright-text);
       font-size: 1.6rem;
@@ -121,15 +124,15 @@
     }
     .pledges {
       display: grid;
-      gap: 1.5rem;
+      gap: 1rem;
     }
-    @media (min-width: 700px) {
-      .pledges { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width: 600px) {
+      .pledges { grid-template-columns: repeat(2, 1fr); }
     }
     .pledge {
-      background: rgba(20,20,20,0.95);
+      background: var(--bg);
+      padding: 1rem 1.25rem;
       border-radius: 12px;
-      padding: 1.5rem;
       box-shadow: 0 0 8px var(--candidate);
     }
     .pledge h3 {
@@ -144,11 +147,14 @@
     }
 
     /* 하단 네비게이션 */
-    .bottom-nav { margin-top: 4rem; text-align: center; }
+    .bottom-nav {
+      margin-top: 4rem;
+      text-align: center;
+      grid-column: 1 / 3;
+    }
     .bottom-nav a {
       color: var(--candidate);
       text-shadow: 0 0 10px currentColor;
-      font-size: 1rem;
     }
   </style>
 </head>
@@ -156,66 +162,62 @@
   <!-- Hero Banner -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>기호 5번 장윤호 &amp; 임영석</h1>
-      <p>“A Choice With No Regret No.5”</p>
+      <h1>기호 1번 이재원 &amp; 이재형</h1>
+      <p>“이제는 이재원 이재형”</p>
     </div>
   </section>
 
   <div class="container">
-    <!-- 사진 + 영상 -->
-    <section class="media-section">
-      <!-- 후보자 사진 (왼쪽) -->
-      <div class="photo-grid">
-        <div class="member">
-          <img src="img/no5/회장.jpg" alt="회장" class="avatar">
-          <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
-          <div class="info">
-            <h2>회장 장윤호</h2>
-          </div>
-        </div>
-        <div class="member">
-          <img src="img/no5/부회장.jpg" alt="부회장" class="avatar">
-          <img src="img/no5/부회장.jpg" alt="부회장" class="avatar-blur">
-          <div class="info">
-            <h2>부회장 임영석</h2>
-          </div>
+    <!-- 후보자 사진 -->
+    <section class="ticket">
+      <div class="member">
+        <img src="img/no1/회장.jpg" alt="회장" class="avatar">
+        <img src="img/no1/회장.jpg" alt="회장" class="avatar-blur">
+        <div class="info">
+          <h2>회장 이재원</h2>
+          <ul>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+          </ul>
         </div>
       </div>
-
-      <!-- 유튜브 영상 (오른쪽) -->
-      <div class="video-grid">
-        <iframe src="https://www.youtube.com/embed/bF2-tik-2tg" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/8TffEXPZevQ" allowfullscreen></iframe>
+      <div class="member">
+        <img src="img/no1/부회장.jpg" alt="부회장" class="avatar">
+        <img src="img/no1/부회장.jpg" alt="부회장" class="avatar-blur">
+        <div class="info">
+          <h2>부회장 이재형</h2>
+          <ul>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+          </ul>
+        </div>
       </div>
     </section>
+
+    <!-- 영상 -->
+    <div class="videobg">
+      <div class="videobox">
+        <iframe src="https://www.youtube.com/embed/6XDx_sv8tAc?autoplay=1&mute=1&loop=1&fs=0" title="타짜: 신의 표 명장면 이재원 vs 의심하는 학생 [4K60]" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
 
     <!-- 공약 -->
     <section class="manifesto">
       <h2>핵심 공약</h2>
       <div class="pledges">
-        <div class="pledge">
-          <h3>1. 각종 대회 개최</h3>
-          <p>- E-sports</p>
-          <p>- 릴스 대회</p>
-          <p>- 학년 대항 체육대회</p>
-        </div>
-        <div class="pledge">
-          <h3>2. 환경 개선</h3>
-          <p>- 학생 의견 반영 급식</p>
-          <p>- 충곽 스터디카페 개설</p>
-          <p>- 귀마개 제공</p>
-          <p>- 택배보관함 개선</p>
-        </div>
-        <div class="pledge">
-          <h3>3. 다양한 행사</h3>
-          <p>- 기숙사 라면 데이</p>
-          <p>- 야구 경기 관람</p>
-          <p>- 월간 영화 데이</p>
-        </div>
+        <div class="pledge"><h3>1. 바른 인성 새김마당 축소</h3><p>내용</p></div>
+        <div class="pledge"><h3>2. 학생회 조직 개편</h3><p>내용</p></div>
+        <div class="pledge"><h3>3. 기숙사 물컵, 디퓨저 설치</h3><p>내용</p></div>
+        <div class="pledge"><h3>4. 충곽 SNS 활성화</h3><p>내용</p></div>
+        <div class="pledge"><h3>5. 생활 관련 물품 지원</h3><p>내용</p></div>
+        <div class="pledge"><h3>6. 타학교 연계 활동 추진</h3><p>내용</p></div>
       </div>
     </section>
 
-    <!-- 뒤로가기 -->
     <nav class="bottom-nav">
       <a href="index.html">← 후보 목록으로</a>
     </nav>
