@@ -14,6 +14,7 @@
       --bright-text: #f9f9f9;
       --text: #222;
       --shadow: 0 4px 10px rgba(0,0,0,.08);
+      --candidate: rgb(0, 122, 255);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -28,13 +29,13 @@
     /* 원하는 배경 이미지를 img/hero.jpg 위치에 넣고, 아래 url 경로를 맞춰 주세요 */
     .hero {
       /* background: url('img/background.jpg') center/cover no-repeat; */
-      background-color: rgb(0,122,255);
+      background-color: var(--candidate);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 4rem 1rem;
       text-align: center;
-      box-shadow: 0 0 60px rgb(0,122,255);
+      box-shadow: 0 0 60px var(--candidate);
     }
     .hero h1 {
       font-size: 2.4rem;
@@ -79,14 +80,14 @@
       height: 225px;
       border-radius: 8%;
       object-fit: inherit;
-      filter: blur(10px) brightness(1.5);
+      filter: blur(8px) brightness(1.5);
       z-index: 0;
     }
     .info h2 {
       font-size: 1.5rem;
-      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+      text-shadow: 0 0 10px currentColor;
       margin-bottom: .5rem;
-      color: var(--primary);
+      color: var(--candidate);
     }
     .info ul {
       color: var(--bright-text);
@@ -94,27 +95,30 @@
       display: grid;
       gap: .4rem;
       font-size: 1rem;
-      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+      text-shadow: 0 0 20px currentColor;
     }
     .info ul li { display: flex; align-items: center; gap: .5rem; }
     .info ul li .icon { font-size: 1.1rem; }
 
     /* Manifesto */
     .manifesto { margin-top: 3rem }
-    .manifesto h2 { color: var(--bright-text); font-size: 1.6rem; margin-bottom: 1rem; text-shadow: 0 0 20px var(--card-bg); }
+    .manifesto h2 { color: var(--bright-text); font-size: 1.6rem; margin-bottom: 1rem; text-shadow: 0 0 20px currentColor; }
     .pledges { display: grid; gap: 1rem; }
     .pledge {
-      background: var(--card-bg);
+      background: var(--bg);
+      outline: var();
       padding: 1rem 1.25rem;
       border-radius: 12px;
-      box-shadow: 0 0 15px var(--card-bg);
+      box-shadow: 0 0 8px var(--candidate);
     }
-    .pledge h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--primary); }
+    .pledge h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--candidate); text-shadow: 0 0 7px currentColor; }
+    .pledge p { color: var(--bright-text); text-shadow: 0 0 10px currentColor; }
     @media (min-width: 600px) {
       .pledges { grid-template-columns: repeat(2, 1fr); }
     }
 
     .bottom-nav { margin-top: 4rem; text-align: center; }
+    .bottom-nav a {color: var(--candidate); text-shadow: 0 0 10px currentColor;}
   </style>
 </head>
 <body>
@@ -169,15 +173,23 @@
           <p>내용</p>
         </div>
         <div class="pledge">
-          <h3>2. </h3>
+          <h3>2. 학생회 조직 개편</h3>
           <p>내용</p>
         </div>
         <div class="pledge">
-          <h3>3. </h3>
+          <h3>3. 기숙사 물컵, 디퓨저 설치</h3>
           <p>내용</p>
         </div>
         <div class="pledge">
-          <h3>4. </h3>
+          <h3>4. 충곽 SNS 활성화</h3>
+          <p>내용</p>
+        </div>
+        <div class="pledge">
+          <h3>5. 생활 관련 물품 지원</h3>
+          <p>내용</p>
+        </div>
+        <div class="pledge">
+          <h3>6. 타학교 연계 활동 추진</h3>
           <p>내용</p>
         </div>
       </div>
