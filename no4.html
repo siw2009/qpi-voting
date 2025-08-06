@@ -4,16 +4,13 @@
   <meta charset="UTF-8">
   <title>4번 후보 - 회장·부회장 소개</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"> -->
-<style>
+  <style>
     :root {
       --primary: #007aff;
-      /* --bg: #f9f9f9; */
       --bg: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
       --card-bg: #ffffff;
       --bright-text: #f9f9f9;
       --text: #222;
-      --shadow: 0 4px 10px rgba(0,0,0,.08);
       --candidate: rgb(0,255,128);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,12 +20,9 @@
       color: var(--text);
       line-height: 1.6;
     }
-    a { text-decoration: none; color: var(--primary); }
 
-    /* ================= Hero Banner ================= */
-    /* 원하는 배경 이미지를 img/hero.jpg 위치에 넣고, 아래 url 경로를 맞춰 주세요 */
+    /* Hero Banner */
     .hero {
-      /* background: url('img/background.jpg') center/cover no-repeat; */
       background-color: var(--candidate);
       display: flex;
       align-items: center;
@@ -38,95 +32,97 @@
       box-shadow: 0 0 60px var(--candidate);
     }
     .hero h1 {
-      font-family: 'Gmarket';
       font-size: 2.4rem;
       color: #fff;
       text-shadow: 0 2px 6px rgba(0,0,0,.35);
       margin-bottom: .5rem;
     }
     .hero p {
-      font-family: 'Danjo';
       font-size: 1.5rem;
       color: #fff;
       opacity: .9;
     }
 
-    /* ================= Layout ================= */
+    /* Layout */
     .container {
       width: 90%;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 1.5rem 0 4rem;
+      padding: 2rem 0 4rem;
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      align-items: start;
     }
 
-    /* 듀오(회장·부회장) 레이아웃 */
-    .ticket { margin-top: 1.5rem; }
+    /* 후보 사진 + 이름 */
+    .ticket { display: flex; flex-direction: column; gap: 2rem; }
     .member {
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
     }
     .avatar {
       width: 175px;
       height: 225px;
       border-radius: 8%;
-      object-fit: inherit;
-      /* box-shadow: 0 0 10px var(--card-bg); */
-      z-index: 1;
-    }
-    .avatar-blur {
-      position: absolute;
-      width: 175px;
-      height: 225px;
-      border-radius: 8%;
-      object-fit: inherit;
-      filter: blur(8px) brightness(1.5);
-      z-index: 0;
+      object-fit: cover;
     }
     .info h2 {
       font-size: 1.5rem;
-      text-shadow: 0 0 10px currentColor;
-      margin-bottom: .5rem;
       color: var(--candidate);
+      text-shadow: 0 0 10px currentColor;
     }
-    .info ul {
+
+    /* 공약 */
+    .manifesto {
+      margin-top: 3rem;
+      grid-column: 1 / 3;
+    }
+    .manifesto h2 {
       color: var(--bright-text);
-      list-style: none;
-      display: grid;
-      gap: .4rem;
-      font-size: 1rem;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
       text-shadow: 0 0 20px currentColor;
     }
-    .info ul li { display: flex; align-items: center; gap: .5rem; }
-    .info ul li .icon { font-size: 1.1rem; }
-
-    /* Manifesto */
-    .manifesto { margin-top: 3rem }
-    .manifesto h2 { color: var(--bright-text); font-size: 1.6rem; margin-bottom: 1rem; text-shadow: 0 0 20px currentColor; }
-    .pledges { display: grid; gap: 1rem; }
-    .pledges { display: grid; gap: 1rem; }
-    .pledge, .big-item {
+    .pledges {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 600px) {
+      .pledges { grid-template-columns: repeat(3, 1fr); }
+    }
+    .pledge {
       background: var(--bg);
-      outline: var();
       padding: 1rem 1.25rem;
       border-radius: 12px;
       box-shadow: 0 0 8px var(--candidate);
     }
-    .pledge h3, .big-item h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--candidate); text-shadow: 0 0 7px currentColor; }
-    .pledge p, .big-item p { color: var(--bright-text); text-shadow: 0 0 10px currentColor; }
-    @media (min-width: 600px) {
-      .pledges { grid-template-columns: repeat(2, 1fr); }
+    .pledge h3 {
+      font-size: 1.2rem;
+      margin-bottom: .4rem;
+      color: var(--candidate);
+      text-shadow: 0 0 7px currentColor;
     }
-    .big-item { grid-column: 2; grid-row-start: 1; grid-row-end: 3; }
+    .pledge p {
+      color: var(--bright-text);
+      text-shadow: 0 0 10px currentColor;
+    }
 
-    .bottom-nav { margin-top: 4rem; text-align: center; }
-    .bottom-nav a {color: var(--candidate); text-shadow: 0 0 10px currentColor;}
+    /* 하단 네비게이션 */
+    .bottom-nav {
+      margin-top: 4rem;
+      text-align: center;
+      grid-column: 1 / 3;
+    }
+    .bottom-nav a {
+      color: var(--candidate);
+      text-shadow: 0 0 10px currentColor;
+    }
   </style>
 </head>
 <body>
-  <!-- ================= Hero Banner ================= -->
+  <!-- Hero Banner -->
   <section class="hero">
     <div class="hero-inner">
       <h1>기호 4번 이주호 &amp; 김도윤</h1>
@@ -135,54 +131,45 @@
   </section>
 
   <div class="container">
-    <!-- 후보 듀오 -->
+    <!-- 후보자 사진 -->
     <section class="ticket">
-      <!-- 회장 -->
       <div class="member">
         <img src="img/no4/회장.png" alt="회장" class="avatar">
-        <img src="img/no4/회장.png" alt="회장" class="avatar-blur">
         <div class="info">
           <h2>회장 이주호</h2>
-          <ul>
-            <li><span class="icon"></span>...</li>
-            <li><span class="icon"></span>...</li>
-            <li><span class="icon"></span>...</li>
-            <li><span class="icon"></span>...</li>
-          </ul>
         </div>
       </div>
-
-      <!-- 부회장 -->
       <div class="member">
         <img src="img/no4/부회장.png" alt="부회장" class="avatar">
-        <img src="img/no4/부회장.png" alt="부회장" class="avatar-blur">
         <div class="info">
           <h2>부회장 김도윤</h2>
-          <ul>
-            <li><span class="icon"></span>...</li>
-            <li><span class="icon"></span>...</li>
-            <li><span class="icon"></span>...</li>
-            <li><span class="icon"></span>...</li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Manifesto -->
+    <!-- 공약 -->
     <section class="manifesto">
       <h2>핵심 공약</h2>
       <div class="pledges">
         <div class="pledge">
           <h3>1. 학생 이동 확인 간편화</h3>
-          <p>내용</p>
+          <p>교실·실험실 입구에 센서를 설치해 학생증으로 이동을 간편하게 기록. 이를 통해 식사 여부 및 위치 파악을 효율화.</p>
         </div>
         <div class="pledge">
           <h3>2. 운동장 안전설비 확충</h3>
-          <p>내용</p>
+          <p>녹슨·방치된 설비를 정리하고 배수구에 덮개를 설치해 안전사고를 예방.</p>
         </div>
-        <div class="big-item">
+        <div class="pledge">
           <h3>3. 기숙사 계단용 끌차 배치</h3>
-          <p>내용</p>
+          <p>층간 이동 시 무거운 캐리어로 인한 사고를 줄이기 위해 계단용 끌차를 배치하고 사용 방법을 안내.</p>
+        </div>
+        <div class="pledge">
+          <h3>4. 건물 입구 발판 설치</h3>
+          <p>비 오는 날 물기와 흙 유입을 막기 위해 신발 먼지·물기 제거 발판을 설치해 쾌적한 환경과 안전한 보행을 보장.</p>
+        </div>
+        <div class="pledge">
+          <h3>5. 샤워실 옷장 개선</h3>
+          <p>수납 공간 부족 문제를 해소하기 위해 개인별 사용이 가능한 옷장으로 개선.</p>
         </div>
       </div>
     </section>
