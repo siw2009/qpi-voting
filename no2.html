@@ -9,7 +9,7 @@
     :root {
       --primary: #007aff;
       /* --bg: #f9f9f9; */
-      --bg: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+      --bg: linear-gradient(180deg, #000000AA 0%, #0a0a0aaa 100%);
       --card-bg: #ffffff;
       --bright-text: #f9f9f9;
       --text: #222;
@@ -19,7 +19,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Noto Sans KR', sans-serif;
-      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
@@ -61,6 +60,13 @@
       grid-template-columns: 55% 45%;
     }
 
+    .bg {
+      background-image: url("img/no2/선거 포스터1_1.jpg");
+      position: absolute;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
     /* 듀오(회장·부회장) 레이아웃 */
     .ticket { margin-top: 1.5rem; }
     .member {
@@ -76,7 +82,7 @@
       border-radius: 8%;
       object-fit: inherit;
       /* box-shadow: 0 0 10px var(--card-bg); */
-      z-index: 1;
+      z-index: 2;
     }
     .avatar-blur {
       position: absolute;
@@ -85,7 +91,7 @@
       border-radius: 8%;
       object-fit: inherit;
       filter: blur(8px) brightness(1.5);
-      z-index: 0;
+      z-index: 1;
     }
     .reels {
       grid-column: 2;
@@ -93,7 +99,6 @@
     .reels-img {
       position: absolute;
       border-radius: 12px;
-      z-index: 3;
     }
     .info h2 {
       font-size: 1.5rem;
