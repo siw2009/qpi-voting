@@ -21,10 +21,8 @@
     }
     a { text-decoration: none; color: var(--primary); }
 
-    /* ================= Hero Banner ================= */
-    /* 원하는 배경 이미지를 img/hero.jpg 위치에 넣고, 아래 url 경로를 맞춰 주세요 */
+    /* Hero Banner */
     .hero {
-      /* background: url('img/background.jpg') center/cover no-repeat; */
       background-color: var(--candidate);
       display: flex;
       align-items: center;
@@ -34,34 +32,40 @@
       box-shadow: 0 0 60px var(--candidate);
     }
     .hero h1 {
-      font-family: 'Gmarket';
       font-size: 2.4rem;
       color: #fff;
       text-shadow: 0 2px 6px rgba(0,0,0,.35);
       margin-bottom: .5rem;
     }
     .hero p {
-      font-family: 'Danjo';
       font-size: 1.5rem;
       color: #fff;
       opacity: .9;
     }
 
-    /* ================= Layout ================= */
+    /* Layout */
     .container {
       width: 90%;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 1.5rem 0 4rem;
     }
 
-    /* 후보자 가로 정렬 */
-    .member-row {
+    /* 사진 + 영상 섹션 */
+    .media-section {
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       gap: 2rem;
       flex-wrap: wrap;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    /* 후보자 사진 (왼쪽, 두 줄) */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
     .member {
       display: flex;
@@ -70,8 +74,6 @@
       text-align: center;
       position: relative;
     }
-    .chairman { grid-column: 1; }
-    .sideman { grid-column: 2; }
     .avatar {
       width: 175px;
       height: 225px;
@@ -91,40 +93,55 @@
     .info h2 {
       font-size: 1.5rem;
       margin: 1rem 0 .5rem;
-      color: var(--candidate); /* 이름만 주황색 */
+      color: var(--candidate);
       text-shadow: 0 0 10px currentColor;
     }
-    .info ul {
-      list-style: none;
+
+    /* 유튜브 영상 (오른쪽, 두 개 나란히) */
+    .video-grid {
       display: grid;
-      gap: .4rem;
-      font-size: 1rem;
-      color: var(--bright-text); /* 설명은 흰색 */
-      text-shadow: 0 0 10px rgba(255,255,255,0.3);
-      padding: 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .video-grid iframe {
+      width: 300px;
+      height: 170px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,140,0,0.6);
     }
 
-    /* Manifesto */
-    .manifesto { margin-top: 3rem }
-    .manifesto h2 { color: var(--bright-text); font-size: 1.6rem; margin-bottom: 1rem; text-shadow: 0 0 20px currentColor; }
-    .pledges { display: grid; gap: 1rem; }
-    .pledges { display: grid; gap: 1rem; }
-    .pledge, .big-item {
-      background: var(--bg);
-      outline: var();
-      padding: 1rem 1.25rem;
-      border-radius: 12px;
-      box-shadow: 0 0 8px var(--candidate);
+    /* 공약 카드 */
+    .manifesto { margin-top: 3rem; }
+    .manifesto h2 {
+      color: var(--bright-text);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px currentColor;
     }
-    .pledge h3, .big-item h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--candidate); text-shadow: 0 0 7px currentColor; }
-    .pledge p, .big-item p { color: var(--bright-text); text-shadow: 0 0 10px currentColor; }
-    @media (min-width: 600px) {
+    .pledges {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 700px) {
       .pledges { grid-template-columns: repeat(3, 1fr); }
     }
-    .big-item { grid-column: 2; grid-row-start: 1; grid-row-end: 3; }
-
-    .bottom-nav { margin-top: 4rem; text-align: center; }
-    .bottom-nav a {color: var(--candidate); text-shadow: 0 0 10px currentColor;}
+    .pledge {
+      background: rgba(20,20,20,0.95);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 8px var(--candidate);
+    }
+    .pledge h3 {
+      font-size: 1.2rem;
+      margin-bottom: .4rem;
+      color: var(--candidate);
+      text-shadow: 0 0 7px currentColor;
+    }
+    .pledge p {
+      color: var(--bright-text);
+      text-shadow: 0 0 10px currentColor;
+    }
 
     /* 하단 네비게이션 */
     .bottom-nav { margin-top: 4rem; text-align: center; }
@@ -145,10 +162,10 @@
   </section>
 
   <div class="container">
-    <!-- 후보자 사진 한 줄 -->
-    <section class="ticket">
-      <div class="member-row">
-        <!-- 회장 -->
+    <!-- 사진 + 영상 -->
+    <section class="media-section">
+      <!-- 후보자 사진 (왼쪽) -->
+      <div class="photo-grid">
         <div class="member">
           <img src="img/no5/회장.jpg" alt="회장" class="avatar">
           <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
@@ -156,8 +173,6 @@
             <h2>회장 장윤호</h2>
           </div>
         </div>
-
-        <!-- 부회장 -->
         <div class="member">
           <img src="img/no5/부회장.jpg" alt="부회장" class="avatar">
           <img src="img/no5/부회장.jpg" alt="부회장" class="avatar-blur">
@@ -165,6 +180,12 @@
             <h2>부회장 임영석</h2>
           </div>
         </div>
+      </div>
+
+      <!-- 유튜브 영상 (오른쪽) -->
+      <div class="video-grid">
+        <iframe src="https://www.youtube.com/embed/bF2-tik-2tg" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/8TffEXPZevQ" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -174,22 +195,22 @@
       <div class="pledges">
         <div class="pledge">
           <h3>1. 각종 대회 개최</h3>
-            <p>- E-sports</p>
-            <p>- 릴스 대회</p>
-            <p>- 학년 대항 체육대회</p>
+          <p>- E-sports</p>
+          <p>- 릴스 대회</p>
+          <p>- 학년 대항 체육대회</p>
         </div>
         <div class="pledge">
           <h3>2. 환경 개선</h3>
-            <p>- 학생 의견 반영 급식</p>
-            <p>- 충곽 스터디카페 개설</p>
-            <p>- 귀마개 제공</p>
-            <p>- 택배보관함 개선</p>
+          <p>- 학생 의견 반영 급식</p>
+          <p>- 충곽 스터디카페 개설</p>
+          <p>- 귀마개 제공</p>
+          <p>- 택배보관함 개선</p>
         </div>
         <div class="pledge">
           <h3>3. 다양한 행사</h3>
-            <p>- 기숙사 라면 데이</p>
-            <p>- 야구 경기 관람</p>
-            <p>- 월간 영화 데이</p>
+          <p>- 기숙사 라면 데이</p>
+          <p>- 야구 경기 관람</p>
+          <p>- 월간 영화 데이</p>
         </div>
       </div>
     </section>
