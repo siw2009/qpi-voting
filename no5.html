@@ -21,6 +21,7 @@
       line-height: 1.6;
     }
 
+    /* Hero Banner */
     .hero {
       background-color: var(--candidate);
       display: flex;
@@ -42,39 +43,30 @@
       opacity: .9;
     }
 
+    /* Layout */
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 0 4rem;
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 350px 1fr;
       gap: 2rem;
       align-items: start;
     }
 
+    /* 후보 사진 + 이름 */
     .ticket { display: flex; flex-direction: column; gap: 2rem; }
     .member {
       display: flex;
       align-items: center;
-      gap: 1.2rem;
-      position: relative;
+      gap: 1.5rem;
     }
     .avatar {
       width: 175px;
       height: 225px;
       border-radius: 8%;
       object-fit: cover;
-      z-index: 1;
-    }
-    .avatar-blur {
-      position: absolute;
-      width: 175px;
-      height: 225px;
-      border-radius: 8%;
-      object-fit: cover;
-      filter: blur(8px) brightness(1.5);
-      z-index: 0;
     }
     .info h2 {
       font-size: 1.5rem;
@@ -82,19 +74,21 @@
       text-shadow: 0 0 10px currentColor;
     }
 
+    /* 영상 */
     .videobg {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
     }
     .videobox {
       width: 100%;
       aspect-ratio: 16/9;
-      max-height: 360px;
+      max-width: 700px;
       box-shadow: 0 0 30px var(--card-bg);
       border-radius: 12px;
       overflow: hidden;
+      margin: 0 auto;
     }
     .videobox iframe {
       width: 100%;
@@ -102,6 +96,7 @@
       border: none;
     }
 
+    /* Manifesto */
     .manifesto {
       margin-top: 3rem;
       grid-column: 1 / 3;
@@ -136,6 +131,7 @@
       text-shadow: 0 0 10px currentColor;
     }
 
+    /* 하단 네비게이션 */
     .bottom-nav {
       margin-top: 4rem;
       text-align: center;
@@ -148,6 +144,7 @@
   </style>
 </head>
 <body>
+  <!-- Hero Banner -->
   <section class="hero">
     <div class="hero-inner">
       <h1>기호 5번 장윤호 &amp; 임영석</h1>
@@ -156,23 +153,23 @@
   </section>
 
   <div class="container">
+    <!-- 후보자 사진 -->
     <section class="ticket">
       <div class="member">
         <img src="img/no5/회장.jpg" alt="회장" class="avatar">
-        <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
         <div class="info">
           <h2>회장 장윤호</h2>
         </div>
       </div>
       <div class="member">
         <img src="img/no5/부회장.png" alt="부회장" class="avatar">
-        <img src="img/no5/부회장.png" alt="부회장" class="avatar-blur">
         <div class="info">
           <h2>부회장 임영석</h2>
         </div>
       </div>
     </section>
 
+    <!-- 영상 -->
     <div class="videobg">
       <div class="videobox">
         <iframe src="https://www.youtube.com/embed/bF2-tik-2tg" title="유튜브 영상1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -182,6 +179,7 @@
       </div>
     </div>
 
+    <!-- 공약 -->
     <section class="manifesto">
       <h2>핵심 공약</h2>
       <div class="pledges">
