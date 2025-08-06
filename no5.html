@@ -8,10 +8,9 @@
     :root {
       --primary: #007aff;
       --bg: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
-      --card-bg: #ffffff;
       --bright-text: #f9f9f9;
-      --text: #222;
-      --candidate: rgb(255,140,0); /* 주황색 */
+      --text: #f9f9f9;
+      --candidate: rgb(255,140,0);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -20,6 +19,7 @@
       color: var(--text);
       line-height: 1.6;
     }
+    a { text-decoration: none; color: var(--primary); }
 
     /* Hero Banner */
     .hero {
@@ -43,24 +43,35 @@
       opacity: .9;
     }
 
-    /* Layout: 후보자 + 영상 */
+    /* Layout */
     .container {
       width: 90%;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 2rem 0 4rem;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 2rem;
-      align-items: start;
+      padding: 1.5rem 0 4rem;
     }
 
-    /* 회장·부회장 사진 */
-    .ticket { display: flex; flex-direction: column; gap: 2rem; }
+    /* 사진 + 영상 섹션 */
+    .media-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* 후보자 사진 (왼쪽, 두 줄) */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
     .member {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
+      text-align: center;
       position: relative;
     }
     .avatar {
@@ -81,33 +92,27 @@
     }
     .info h2 {
       font-size: 1.5rem;
+      margin: 1rem 0 .5rem;
       color: var(--candidate);
       text-shadow: 0 0 10px currentColor;
     }
 
-    /* 영상 부분 */
-    .videobg {
-      width: 100%;
-      height: 100%;
+    /* 유튜브 영상 (오른쪽, 두 개 나란히) */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
-    .videobox {
-      width: 100%;
-      aspect-ratio: 16/9;
-      box-shadow: 0 0 30px var(--card-bg);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .videobox iframe {
-      width: 100%;
-      height: 100%;
+    .video-grid iframe {
+      width: 300px;
+      height: 170px;
       border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,140,0,0.6);
     }
 
-    /* Manifesto */
-    .manifesto {
-      margin-top: 3rem;
-      grid-column: 1 / 3;
-    }
+    /* 공약 카드 */
+    .manifesto { margin-top: 3rem; }
     .manifesto h2 {
       color: var(--bright-text);
       font-size: 1.6rem;
@@ -116,15 +121,15 @@
     }
     .pledges {
       display: grid;
-      gap: 1rem;
+      gap: 1.5rem;
     }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .pledges { grid-template-columns: repeat(3, 1fr); }
     }
     .pledge {
-      background: var(--bg);
-      padding: 1rem 1.25rem;
+      background: rgba(20,20,20,0.95);
       border-radius: 12px;
+      padding: 1.5rem;
       box-shadow: 0 0 8px var(--candidate);
     }
     .pledge h3 {
@@ -139,14 +144,11 @@
     }
 
     /* 하단 네비게이션 */
-    .bottom-nav {
-      margin-top: 4rem;
-      text-align: center;
-      grid-column: 1 / 3;
-    }
+    .bottom-nav { margin-top: 4rem; text-align: center; }
     .bottom-nav a {
       color: var(--candidate);
       text-shadow: 0 0 10px currentColor;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -160,34 +162,32 @@
   </section>
 
   <div class="container">
-    <!-- 후보자 사진 -->
-    <section class="ticket">
-      <div class="member">
-        <img src="img/no5/회장.jpg" alt="회장" class="avatar">
-        <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
-        <div class="info">
-          <h2>회장 장윤호</h2>
+    <!-- 사진 + 영상 -->
+    <section class="media-section">
+      <!-- 후보자 사진 (왼쪽) -->
+      <div class="photo-grid">
+        <div class="member">
+          <img src="img/no5/회장.jpg" alt="회장" class="avatar">
+          <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
+          <div class="info">
+            <h2>회장 장윤호</h2>
+          </div>
+        </div>
+        <div class="member">
+          <img src="img/no5/부회장.jpg" alt="부회장" class="avatar">
+          <img src="img/no5/부회장.jpg" alt="부회장" class="avatar-blur">
+          <div class="info">
+            <h2>부회장 임영석</h2>
+          </div>
         </div>
       </div>
-      <div class="member">
-        <img src="img/no5/부회장.png" alt="부회장" class="avatar">
-        <img src="img/no5/부회장.png" alt="부회장" class="avatar-blur">
-        <div class="info">
-          <h2>부회장 임영석</h2>
-        </div>
+
+      <!-- 유튜브 영상 (오른쪽) -->
+      <div class="video-grid">
+        <iframe src="https://www.youtube.com/embed/bF2-tik-2tg" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/8TffEXPZevQ" allowfullscreen></iframe>
       </div>
     </section>
-
-    <!-- 영상 -->
-    <div class="videobg">
-      <div class="videobox">
-        <iframe src="https://www.youtube.com/embed/bF2-tik-2tg?autoplay=1&mute=1&loop=1&fs=0" title="유튜브 영상1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <br>
-      <div class="videobox">
-        <iframe src="https://www.youtube.com/embed/8TffEXPZevQ?autoplay=1&mute=1&loop=1&fs=0" title="유튜브 영상2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
 
     <!-- 공약 -->
     <section class="manifesto">
@@ -195,10 +195,9 @@
       <div class="pledges">
         <div class="pledge">
           <h3>1. 각종 대회 개최</h3>
-          <p>- E-sports 리그 개최</p>
-          <p>- 릴스 대회 개최</p>
-          <p>- 학년 대항 체육대회 개최</p>
-          <p>- 체육대회 개선(공주시민운동장)</p>
+          <p>- E-sports</p>
+          <p>- 릴스 대회</p>
+          <p>- 학년 대항 체육대회</p>
         </div>
         <div class="pledge">
           <h3>2. 환경 개선</h3>
@@ -216,6 +215,7 @@
       </div>
     </section>
 
+    <!-- 뒤로가기 -->
     <nav class="bottom-nav">
       <a href="index.html">← 후보 목록으로</a>
     </nav>
