@@ -21,8 +21,10 @@
       line-height: 1.6;
     }
 
-    /* Hero Banner */
+    /* ================= Hero Banner ================= */
+    /* 원하는 배경 이미지를 img/hero.jpg 위치에 넣고, 아래 url 경로를 맞춰 주세요 */
     .hero {
+      /* background: url('img/background.jpg') center/cover no-repeat; */
       background-color: var(--candidate);
       display: flex;
       align-items: center;
@@ -32,12 +34,14 @@
       box-shadow: 0 0 60px var(--candidate);
     }
     .hero h1 {
+      font-family: 'Gmarket';
       font-size: 2.4rem;
       color: #fff;
       text-shadow: 0 2px 6px rgba(0,0,0,.35);
       margin-bottom: .5rem;
     }
     .hero p {
+      font-family: 'Danjo';
       font-size: 1.5rem;
       color: #fff;
       opacity: .9;
@@ -70,10 +74,20 @@
     }
     .info h2 {
       font-size: 1.5rem;
-      color: var(--candidate);
       text-shadow: 0 0 10px currentColor;
+      margin-bottom: .5rem;
+      color: var(--candidate);
     }
-
+    .info ul {
+      color: var(--bright-text);
+      list-style: none;
+      display: grid;
+      gap: .4rem;
+      font-size: 1rem;
+      text-shadow: 0 0 20px currentColor;
+    }
+    .info ul li { display: flex; align-items: center; gap: .5rem; }
+    .info ul li .icon { font-size: 1.1rem; }
     /* 영상 */
     .videobg {
       width: 100%;
@@ -85,7 +99,7 @@
       width: 100%;
       aspect-ratio: 16/9;
       max-width: 700px;
-      box-shadow: 0 0 30px var(--card-bg);
+      box-shadow: 0 0 30px var(--candidate);
       border-radius: 12px;
       overflow: hidden;
       margin: 0 auto;
@@ -184,10 +198,10 @@
     <!-- 영상 -->
     <div class="videobg">
       <div class="videobox">
-        <iframe src="https://www.youtube.com/embed/bF2-tik-2tg" title="유튜브 영상1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/bF2-tik-2tg?autoplay=1&mute=1&loop=1&fs=0" title="유튜브 영상1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="videobox">
-        <iframe src="https://www.youtube.com/embed/8TffEXPZevQ" title="유튜브 영상2" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/8TffEXPZevQ?autoplay=1&mute=1&loop=1&fs=0" title="유튜브 영상2" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
 
