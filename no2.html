@@ -104,18 +104,19 @@
     .manifesto { margin-top: 3rem }
     .manifesto h2 { color: var(--bright-text); font-size: 1.6rem; margin-bottom: 1rem; text-shadow: 0 0 20px currentColor; }
     .pledges { display: grid; gap: 1rem; }
-    .pledge {
+    .pledge, .big-item {
       background: var(--bg);
       outline: var();
       padding: 1rem 1.25rem;
       border-radius: 12px;
       box-shadow: 0 0 8px var(--candidate);
     }
-    .pledge h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--candidate); text-shadow: 0 0 7px currentColor; }
-    .pledge p { color: var(--bright-text); text-shadow: 0 0 10px currentColor; }
+    .pledge h3, .big-item h3 { font-size: 1.2rem; margin-bottom: .4rem; color: var(--candidate); text-shadow: 0 0 7px currentColor; }
+    .pledge p, .big-item p { color: var(--bright-text); text-shadow: 0 0 10px currentColor; }
     @media (min-width: 600px) {
       .pledges { grid-template-columns: repeat(2, 1fr); }
     }
+    .big-item { grid-column: 2; grid-row-start: 1; grid-row-end: 3; }
 
     .bottom-nav { margin-top: 4rem; text-align: center; }
     .bottom-nav a {color: var(--candidate); text-shadow: 0 0 10px currentColor;}
@@ -172,7 +173,7 @@
           <h3>생활기록부가 살아나는</h3>
           <p>내용</p>
         </div>
-        <div class="pledge">
+        <div class="big-item">
           <h3>편하고, 눈치 보지않는</h3>
           <p>내용</p>
           <p>아아아</p>
