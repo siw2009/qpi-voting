@@ -51,14 +51,19 @@
       padding: 1.5rem 0 4rem;
     }
 
-    /* 후보 프로필 */
-    .ticket { margin-top: 1.5rem; }
+    /* 후보자 가로 정렬 */
+    .member-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap; /* 화면이 좁아지면 자동 줄바꿈 */
+      margin-top: 1.5rem;
+    }
     .member {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
+      text-align: center;
       position: relative;
     }
     .avatar {
@@ -80,7 +85,7 @@
     .info h2 {
       font-size: 1.5rem;
       text-shadow: 0 0 10px currentColor;
-      margin-bottom: .5rem;
+      margin: 1rem 0 .5rem;
       color: var(--candidate);
     }
     .info ul {
@@ -90,6 +95,7 @@
       gap: .4rem;
       font-size: 1rem;
       text-shadow: 0 0 20px currentColor;
+      padding: 0;
     }
 
     /* 공약 카드 */
@@ -154,35 +160,37 @@
   </section>
 
   <div class="container">
-    <!-- 후보 프로필 -->
+    <!-- 후보자 사진 한 줄 -->
     <section class="ticket">
-      <!-- 회장 -->
-      <div class="member">
-        <img src="img/no5/회장.jpg" alt="회장" class="avatar">
-        <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
-        <div class="info">
-          <h2>회장 장윤호</h2>
-          <ul>
-            <li>학년 대표 경험</li>
-            <li>학교 문화 개선 활동</li>
-            <li>소통 중심 리더십</li>
-            <li>다양한 프로젝트 기획</li>
-          </ul>
+      <div class="member-row">
+        <!-- 회장 -->
+        <div class="member">
+          <img src="img/no5/회장.jpg" alt="회장" class="avatar">
+          <img src="img/no5/회장.jpg" alt="회장" class="avatar-blur">
+          <div class="info">
+            <h2>회장 장윤호</h2>
+            <ul>
+              <li>학년 대표 경험</li>
+              <li>학교 문화 개선 활동</li>
+              <li>소통 중심 리더십</li>
+              <li>다양한 프로젝트 기획</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <!-- 부회장 -->
-      <div class="member">
-        <img src="img/no5/부회장.png" alt="부회장" class="avatar">
-        <img src="img/no5/부회장.png" alt="부회장" class="avatar-blur">
-        <div class="info">
-          <h2>부회장 임영석</h2>
-          <ul>
-            <li>학생회 활동 경력</li>
-            <li>효율적 행정 지원 능력</li>
-            <li>학생 의견 수렴 전문가</li>
-            <li>행사 운영 경험 다수</li>
-          </ul>
+        <!-- 부회장 -->
+        <div class="member">
+          <img src="img/no5/부회장.png" alt="부회장" class="avatar">
+          <img src="img/no5/부회장.png" alt="부회장" class="avatar-blur">
+          <div class="info">
+            <h2>부회장 임영석</h2>
+            <ul>
+              <li>학생회 활동 경력</li>
+              <li>효율적 행정 지원 능력</li>
+              <li>학생 의견 수렴 전문가</li>
+              <li>행사 운영 경험 다수</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
