@@ -58,7 +58,7 @@
       margin: 0 auto;
       padding: 1.5rem 0 4rem;
       display: grid;
-      grid-template-columns: 50% 20% 30%;
+      grid-template-columns: 55% 25% 20%;
     }
 
     /* 듀오(회장·부회장) 레이아웃 */
@@ -92,14 +92,8 @@
     }
     .reels-img {
       position: absolute;
-      border-radius: 8%;
+      border-radius: 12px;
       z-index: 3;
-    }
-    .reels-img-blur {
-      position: absolute;
-      border-radius: 8%;
-      filter: blur(10px) brightness(1.5);
-      z-index: 2;
     }
     .info h2 {
       font-size: 1.5rem;
@@ -118,8 +112,10 @@
     .info ul li { display: flex; align-items: center; gap: .5rem; }
     .info ul li .icon { font-size: 1.1rem; }
     
-    .videobg { width: 100%; height: 100%; grid-column: 2; grid-row: 1; align-content: center; }
-    .videobox { width: inherit; border-radius: 12px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 0 30px var(--candidate); }
+    .videobg { width: 80%; height: 100%; grid-column: 2; grid-row: 1; align-content: center; }
+    .videobg2 { width: 100%; height: 100%; grid-column: 3; grid-row: 1; align-content: center; }
+    .videobox { width: 100%; border-radius: 12px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 0 30px var(--candidate); margin-right: 20%; }
+    .videobox2 { width: inherit; border-radius: 12px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 0 30px var(--candidate); position: relative; }
 
     /* Manifesto */
     .manifesto { margin-top: 3rem; grid-column-start: 1; grid-column-end: 4; }
@@ -186,15 +182,22 @@
       </div>
     </section>
     
-    <div class="reels">
-      <!-- <a href = "https://www.instagram.com/reel/DM_0_yGyDVq/?igsh=MXZudDh5aWtjeHI0Nw==">
-        <img src="img/no2/릴스.png" class="reels-img">
-        <img src="img/no2/릴스.png" class="reels-img-blur">
-      </a> -->
-      <div class="videobg">
-        <div class="videobox">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ykeP0Em0BYI?autoplay=1&mute=1&loop=1&fs=0" title="기호 2번 화이팅 🔥 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+    <!-- <a href = "https://www.instagram.com/reel/DM_0_yGyDVq/?igsh=MXZudDh5aWtjeHI0Nw==">
+      <img src="img/no2/릴스.png" class="reels-img">
+      <img src="img/no2/릴스.png" class="reels-img-blur">
+    </a> -->
+    <div class="videobg">
+      <div class="videobox">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ykeP0Em0BYI?autoplay=1&mute=1&loop=1&fs=0" title="기호 2번 화이팅 🔥 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="videobg2">
+      <div class="videobox2">
+        <!-- <img src="img/no2/릴스.png" width="100%" height="100%"> -->
+        <a href = "https://www.instagram.com/reel/DM_0_yGyDVq/?igsh=MXZudDh5aWtjeHI0Nw==">
+          <img width="100%" height="100%" src="img/no2/릴스.png" class="reels-img">
+          <!-- <img width="100%" height="100%" src="img/no2/릴스.png" class="reels-img-blur"> -->
+        </a>
       </div>
     </div>
 
