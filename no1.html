@@ -54,13 +54,15 @@
     /* ================= Layout ================= */
     .container {
       width: 90%;
-      max-width: 900px;
+      /* max-width: 900px; */
       margin: 0 auto;
       padding: 1.5rem 0 4rem;
+      display: grid;
+      grid-template-columns: 1rf 1rf;
     }
 
     /* 듀오(회장·부회장) 레이아웃 */
-    .ticket { margin-top: 1.5rem; }
+    .ticket { margin-top: 1.5rem; grid-row: 1; grid-column: 1;}
     .member {
       display: flex;
       align-items: center;
@@ -101,6 +103,9 @@
     }
     .info ul li { display: flex; align-items: center; gap: .5rem; }
     .info ul li .icon { font-size: 1.1rem; }
+    
+    .videobg { width: 100%; height: 100%; grid-column: 2; grid-row: 1; align-content: center; }
+    .videobox { width: inherit; aspect-ratio: 16/9; }
 
     /* Manifesto */
     .manifesto { margin-top: 3rem }
@@ -165,6 +170,12 @@
         </div>
       </div>
     </section>
+
+    <div class="videobg">
+      <div class="videobox">
+        <iframe width=100% height=100% src="https://www.youtube.com/embed/6XDx_sv8tAc" title="타짜: 신의 표 명장면 이재원 vs 의심하는 학생 [4K60]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
 
     <!-- Manifesto -->
     <section class="manifesto">
